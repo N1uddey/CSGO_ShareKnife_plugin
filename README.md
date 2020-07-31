@@ -16,7 +16,9 @@ Then:
 Move the .smx file into /csgo/addons/sourcemod/plugins/ and it's done.
 
 #### <i>Usage</i> 
-Type !drop in game chat.
+Type !drop in game chat and you will drop a copy of your own knife.
+
+And you have to hold a knife then you can drop one.
 
 Attention:  You can only drop 5 knives in a single round/map(Depends on version).
 
