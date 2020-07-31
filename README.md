@@ -15,6 +15,8 @@ DHooks(Maybe)
 Then:
 Move the .smx file into /csgo/addons/sourcemod/plugins/ and it's done.
 
+Just the version you needed is enough.(<i>shareknife.smx</i> or <i>shareknifekzv.smx</i>)
+
 #### <i>Usage</i> 
 Type !drop in game chat and you will drop a copy of your own knife.
 
