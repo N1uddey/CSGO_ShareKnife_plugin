@@ -52,4 +52,4 @@ I did this because i want to share my knife with friends in my local kz server.
 
 #### <i>New changes:</i>
 
-Disable knife drop when not using !drop.
+Disable drop_knife when not using !drop.
