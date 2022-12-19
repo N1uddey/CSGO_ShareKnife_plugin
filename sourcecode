@@ -1,0 +1,34 @@
+Main code is here. It's fine if you want to use or modify it in your own server. But you need to indicate that the original author is N1uddey(me).
+
+public Action Drop_Knife(client, args)
+{
+	if(FindConVar("mp_drop_knife_enable").IntValue == 0)
+		FindConVar("mp_drop_knife_enable").IntValue = 1;
+	
+	char knife[256];
+	int check = GetPlayerWeaponSlot(client, CS_SLOT_KNIFE);
+	if(check == -1)
+	{
+		PrintToChat(client, "You must have a knife in hands!");
+		return Plugin_Handled;
+	}
+	GetEntityClassname(check, knife, 256);
+	
+	if(counter[client]<5)                                                             //5 is the amount of knives each player can drop.
+	{
+		GivePlayerItem(client, knife, 0);
+		new String:name[64];
+		GetClientName(client, name, sizeof(name));
+		PrintToChatAll("\x03%s droped a \x07[%s].", name, knife);
+		counter[client]++;
+	}
+	else if(counter[client] == 5)                                                     //If one player reach the limit amount(5), there would be no more knife can be dropped for him.
+	{
+		PrintToChat(client, "You already dropped \x07%d \x01knives!(See more info in console)", counter[client]);
+		PrintToConsole(client, "You can only drop 5 knives in a single round. You must wait for the next round.");
+		PrintToConsole(client, "ShareKnife plugin by N1uddey.");
+		PrintToConsole(client, "Thanks for using.");
+	}
+	
+	return Plugin_Handled;
+}
